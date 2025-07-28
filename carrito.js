@@ -1,4 +1,4 @@
-const productos = [{ id: 1, nombre: "Gorra New Era New York Yankees 940", precio: 18500, imagen: "img/gorra1.jpg", stock: 6 },
+const productos = [{ id: 1, nombre: "Gorra New Era New York Yankees 940", precio: 18500, imagen: "gorra1.jpg", stock: 6 },
 { id: 2, nombre: "Gorra Hang Loose 3D", precio: 18500, imagen: "gorra2.jpg", stock: 7 },
 { id: 3, nombre: "Gorra Under Armour Blitzing", precio: 18500, imagen: "gorra3.jpg", stock: 8 },
 { id: 4, nombre: "Gorra Adidas Climacool Sport Trucker", precio: 18500, imagen: "gorra4.jpg", stock: 9 },
