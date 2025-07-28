@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gorras-Club-Chile Oficial</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <script src="carrito.js" defer></script>
+</head>
+<body>
+
+</div>
+
+  <header>
+    <h1>GORRAS-CLUB-CHILE OFICIAL</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Preguntas</a></li>
+        <li><a href="#">Políticas</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div id="carrito-icono" onclick="toggleCarrito()">🛒 <span id="contador-carrito">0</span></div>
+  </header>
+
+  <main>
+    <input type="text" id="buscador" placeholder="Buscar gorras..." oninput="filtrarProductos()" />
+    <div class="contenedor-productos" id="productos"></div>
+  </main>
+
+  <aside id="carrito" class="carrito">
+    <h2>Carrito</h2>
+    <div id="items-carrito"></div>
+    <p>Total: $<span id="total">0</span></p>
+    <a href="pago.html" <button id="btn-pagar" class="boton-pagar" onclick="irAPago()">Pagar</button>
+
+</a>
+  </aside>
+
+  <footer>
+    <p>© 2025 Gorras-Club. Todos los derechos reservados.</p>
+    <div class="medios-pago">
+      <img src="img/visa.png" alt="Visa" />
+      <img src="img/mastercard.png" alt="Mastercard" />
+      <img src="img/mercadopago.png" alt="MercadoPago" />
+      <img src="img/amex.png" alt="Amex" />
+    </div>
+  </footer>
+</body>
+</html>

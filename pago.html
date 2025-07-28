@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pagar - Gorras-Club-chile oficial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="estilos.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .formulario-pago {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .formulario-pago h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .formulario-pago label {
+      display: block;
+      margin-top: 10px;
+    }
+    .formulario-pago input, .formulario-pago textarea, .formulario-pago select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .formulario-pago button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #000;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .formulario-pago button:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<div class="titulo-logo">
+  <img src="gorraslogo.png" alt="Logo Gorra" />
+  <h1>Gorras-Club</h1>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cantidad = parseInt(localStorage.getItem("cantidadProductos")) || 0;
+    const btnTerminar = document.querySelector("form button[type='submit']");
+
+    // Links diferentes para MercadoPago según cantidad
+    const linksPago = {
+      1: "https://mpago.la/21Utui9",
+      2: "https://mpago.la/1RybPrT",
+      3: "https://mpago.la/2yBhzNC",
+      4: "https://mpago.la/2bJqoMD",
+      5: "https://mpago.la/2ZUAd7Q"
+    };
+
+    // Cambiar la acción del formulario al link correcto
+    if (cantidad >= 1 && cantidad <= 5) {
+      document.querySelector("form").action = linksPago[cantidad];
+    } else {
+      // Si no hay cantidad o fuera de rango, se puede deshabilitar el botón
+      btnTerminar.disabled = true;
+      alert("Cantidad inválida para procesar el pago.");
+    }
+  });
+</script>
+
+<body>
+  <div class="formulario-pago">
+    <h2>Formulario de Pago</h2>
+    <form action="https://www.mercadopago.com.ar/" method="get">
+      <label>Nombre completo:
+        <input type="text" name="nombre" required />
+      </label>
+
+      <label>Email:
+        <input type="email" name="email" required />
+      </label>
+
+      <label>Teléfono:
+        <input type="tel" name="telefono" required />
+      </label>
+      <label>documento:
+        <input type="tel" name="documento" required />
+      </label>
+      <label>Dirección de envío:
+        <input type="text" name="direccion" required />
+      </label>
+
+      <label>Método de pago preferido:
+        <select name="metodo">
+          <option value="tarjeta">Tarjeta</option>
+          <option value="mercadopago">MercadoPago</option>
+          <option value="transferencia">Transferencia</option>
+        </select>
+      </label>
+
+      <label>Comentarios adicionales:
+        <textarea name="comentarios" rows="3"></textarea>
+      </label>
+
+      <button type="submit">Terminar de pagar</button>
+    </form>
+  </div>
+</body>
+</html>
